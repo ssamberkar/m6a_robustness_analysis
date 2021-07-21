@@ -107,17 +107,7 @@ The individual DE genes table are as follows:
 
 ```{r de_results_list, message=FALSE, echo=TRUE, eval=T}
 
-knitr::kable(xu_DE_results_df.list[[1]])
-
-knitr::kable(xu_DE_results_df.list[[2]])
-
-knitr::kable(xu_DE_results_df.list[[3]])
-
-knitr::kable(xu_DE_results_df.list[[4]])
-
-knitr::kable(xu_DE_results_df.list[[5]])
-
-knitr::kable(xu_DE_results_df.list[[6]])
+kable(data.frame(Number_of_DEGs = unlist(lapply(xu_DE_results_df.list, function(x) dim(x)[1]))))
 ```
 
 ### MA plots
