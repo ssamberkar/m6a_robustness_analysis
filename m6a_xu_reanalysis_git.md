@@ -283,7 +283,7 @@ dom_mouse_degs = fread('/home/ssa18/mouseTxDEGs.tsv', sep = '\t', header = T, st
 
 # First comparison with `parental vs METTL3 KO` and Dominissini et al.
 
-ggvenn(data = list(Xu = oma_human_mouse_homologs$V1[oma_human_mouse_homologs$V2 %in% xu_DE_results_df.list$`METTL3 KO+WT METTL3 ~ METTL3 KO+Mut METTL3`$GeneID], Dominissini = dom_mouse_degs$Gene.stable.ID), fill_alpha = 0.3)
+ggvenn(data = list(Xu = oma_human_mouse_homologs$V1[oma_human_mouse_homologs$V2 %in% xu_DE_results_df.list$`parental ~ METTL3 KO`$GeneID], Dominissini = dom_mouse_degs$Gene.stable.ID), fill_alpha = 0.3)
 ```
 
 ![](m6a_xu_reanalysis_git_files/figure-gfm/xu_dom_comp-1.png)<!-- -->
@@ -324,3 +324,9 @@ hist(sim2, main = paste("Xu, METTL3 KO+WT METTL3 ~ METTL3 KO+Mut METTL3 ~ Domini
 ```
 
 ![](m6a_xu_reanalysis_git_files/figure-gfm/de_sim-2.png)<!-- -->
+
+The probability of obtaining 2 DE genes from randomly picked,
+identically sized gene sets is `#occurences of 2 genes/100000` which
+equals 0.223. Since this is below the significance level of p &lt;=
+0.05, we can conclude that these similar studies aren’t in agreement, at
+least at the level of DE genes.
