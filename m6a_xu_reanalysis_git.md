@@ -55,7 +55,8 @@ To obtain the experimental design, we fetch the experiment `phenoData`
 originally submitted to GEO and subset it to generate our design matrix.
 Once generated, we then use the `genotype` variable to run DE analysis.
 
-    ## Warning in DESeqDataSet(se, design = design, ignoreRank): some variables in design formula are characters, converting to factors
+    ## Warning in DESeqDataSet(se, design = design, ignoreRank): some variables in
+    ## design formula are characters, converting to factors
 
 ### DE results
 
@@ -196,37 +197,42 @@ for (i in 1:length(xu_ma_plots.list)){
 
     ## Warning: Removed 1662 rows containing missing values (geom_point).
 
-    ## Warning: ggrepel: 2 unlabeled data points (too many overlaps). Consider increasing max.overlaps
+    ## Warning: ggrepel: 2 unlabeled data points (too many overlaps). Consider
+    ## increasing max.overlaps
 
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-1.png)<!-- -->
-
-    ## Warning: Removed 1662 rows containing missing values (geom_point).
-
-    ## Warning: ggrepel: 7 unlabeled data points (too many overlaps). Consider increasing max.overlaps
-
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-2.png)<!-- -->
+![](m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-1.png)<!-- -->
 
     ## Warning: Removed 1662 rows containing missing values (geom_point).
 
-    ## Warning: ggrepel: 4 unlabeled data points (too many overlaps). Consider increasing max.overlaps
+    ## Warning: ggrepel: 7 unlabeled data points (too many overlaps). Consider
+    ## increasing max.overlaps
 
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-3.png)<!-- -->
-
-    ## Warning: Removed 1662 rows containing missing values (geom_point).
-
-    ## Warning: ggrepel: 8 unlabeled data points (too many overlaps). Consider increasing max.overlaps
-
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-4.png)<!-- -->
+![](m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-2.png)<!-- -->
 
     ## Warning: Removed 1662 rows containing missing values (geom_point).
 
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-5.png)<!-- -->
+    ## Warning: ggrepel: 4 unlabeled data points (too many overlaps). Consider
+    ## increasing max.overlaps
+
+![](m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-3.png)<!-- -->
 
     ## Warning: Removed 1662 rows containing missing values (geom_point).
 
-    ## Warning: ggrepel: 4 unlabeled data points (too many overlaps). Consider increasing max.overlaps
+    ## Warning: ggrepel: 8 unlabeled data points (too many overlaps). Consider
+    ## increasing max.overlaps
 
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-6.png)<!-- -->
+![](m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-4.png)<!-- -->
+
+    ## Warning: Removed 1662 rows containing missing values (geom_point).
+
+![](m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-5.png)<!-- -->
+
+    ## Warning: Removed 1662 rows containing missing values (geom_point).
+
+    ## Warning: ggrepel: 4 unlabeled data points (too many overlaps). Consider
+    ## increasing max.overlaps
+
+![](m6a_xu_reanalysis_git_files/figure-gfm/xu_ma-6.png)<!-- -->
 
 ### PCA plots
 
@@ -251,7 +257,7 @@ for (i in 1:length(xu_ma_plots.list)){
 }
 ```
 
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-1.png)<!-- -->![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-2.png)<!-- -->![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-3.png)<!-- -->![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-4.png)<!-- -->![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-5.png)<!-- -->![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-6.png)<!-- -->
+![](m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-1.png)<!-- -->![](m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-2.png)<!-- -->![](m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-3.png)<!-- -->![](m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-4.png)<!-- -->![](m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-5.png)<!-- -->![](m6a_xu_reanalysis_git_files/figure-gfm/xu_pca-6.png)<!-- -->
 
 # Comparison with Dominissini et al.
 
@@ -280,7 +286,7 @@ dom_mouse_degs = fread('/home/ssa18/mouseTxDEGs.tsv', sep = '\t', header = T, st
 ggvenn(data = list(Xu = oma_human_mouse_homologs$V1[oma_human_mouse_homologs$V2 %in% xu_DE_results_df.list$`METTL3 KO+WT METTL3 ~ METTL3 KO+Mut METTL3`$GeneID], Dominissini = dom_mouse_degs$Gene.stable.ID), fill_alpha = 0.3)
 ```
 
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_dom_comp-1.png)<!-- -->
+![](m6a_xu_reanalysis_git_files/figure-gfm/xu_dom_comp-1.png)<!-- -->
 
 ``` r
 # Second comparison with `METTL3 KO+WT METTL3 ~ METTL3 KO+Mut METTL3` and Dominissini et al.
@@ -288,7 +294,7 @@ ggvenn(data = list(Xu = oma_human_mouse_homologs$V1[oma_human_mouse_homologs$V2 
 ggvenn(data = list(Xu = oma_human_mouse_homologs$V1[oma_human_mouse_homologs$V2 %in% xu_DE_results_df.list$`METTL3 KO+WT METTL3 ~ METTL3 KO+Mut METTL3`$GeneID], Dominissini = dom_mouse_degs$Gene.stable.ID), fill_alpha = 0.3)
 ```
 
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/xu_dom_comp-2.png)<!-- -->
+![](m6a_xu_reanalysis_git_files/figure-gfm/xu_dom_comp-2.png)<!-- -->
 
 ## Significance of overlaps
 
@@ -311,10 +317,10 @@ sim2 = replicate(n = 100000, expr = length(intersect(sample(x = ens_human_univ, 
 hist(sim1, main = paste("Xu, parental vs METTL3_KO ~ Dominissini"), xlab = 'Overlaps of random DE genes', col = '#abebc6')
 ```
 
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/de_sim-1.png)<!-- -->
+![](m6a_xu_reanalysis_git_files/figure-gfm/de_sim-1.png)<!-- -->
 
 ``` r
 hist(sim2, main = paste("Xu, METTL3 KO+WT METTL3 ~ METTL3 KO+Mut METTL3 ~ Dominissini"), xlab = 'Overlaps of random DE genes', col = '#abebc6')
 ```
 
-![](/home/ssa18/m6a_robustness_analysis/m6a_xu_reanalysis_git_files/figure-gfm/de_sim-2.png)<!-- -->
+![](m6a_xu_reanalysis_git_files/figure-gfm/de_sim-2.png)<!-- -->
