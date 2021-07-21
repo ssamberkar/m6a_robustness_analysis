@@ -4,6 +4,7 @@ library(data.table)
 library(dplyr)
 library(tibble)
 library(EnsDb.Mmusculus.v79)
+library(EnsDb.Hsapiens.v86)
 library(GEOquery)
 library(DT)
 library(ggplot2)
@@ -103,5 +104,18 @@ for (i in 1:length(xu_ma_plots.list)){
 }
 
 # Compare with Dominissini et al.
+# Read human-mouse homologs as extracted from OMA
 
-dom_mouse_degs = fread('./rss_shared/mouseTxDEGs.tsv', sep = '\t', header = T, stringsAsFactors = F)
+edb_human = EnsDb.Hsapiens.v86
+ens_human_univ = keys(edb_human, keytype = 'GENEID')
+oma_human_mouse_homologs = fread(input = "./m6a_robustness_analysis/Mouse_Human_orthologs_OMA_output_20072021.txt", sep = '\t', header = F, stringsAsFactors = F, fill = T)
+
+# Permutation (100k) test between Xu (parental vs. METTL3 knockdown cells) and Dominissini et al. (mouse <--> human)
+sim1 = replicate(n = 100000, expr = length(intersect(sample(x = ens_human_univ, size = length(xu_DE_results_df.list$`parental ~ METTL3 KO`$GeneID), replace = F), 
+                                                    sample(x = ens_human_univ, size = length(dom_mouse_degs$Gene.stable.ID), replace = F))), simplify = T)
+
+sim2 = replicate(n = 100000, expr = length(intersect(sample(x = ens_human_univ, size = length(xu_DE_results_df.list$`METTL3 KO+WT METTL3 ~ METTL3 KO+Mut METTL3`$GeneID), replace = F), 
+                                                     sample(x = ens_human_univ, size = length(dom_mouse_degs$Gene.stable.ID), replace = F))), simplify = T)
+
+
+dom_mouse_degs = fread('./mouseTxDEGs.tsv', sep = '\t', header = T, stringsAsFactors = F)
